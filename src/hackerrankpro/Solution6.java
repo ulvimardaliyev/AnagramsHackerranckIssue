@@ -21,7 +21,9 @@ public class Solution6 {
                 if (i > input.length() || k > input.length()) {
                     break;
                 } else {
-                    stringKeeper.add(input.substring(i, k));
+                    if (!stringKeeper.contains(input.substring(i, k))) {
+                        stringKeeper.add(input.substring(i, k));
+                    }
                 }
             }
             //l count-a beraber olanda break, break olmasa, o eyni substringleri
@@ -35,5 +37,6 @@ public class Solution6 {
 
         }
         System.out.println(stringKeeper);
+
     }
 }
