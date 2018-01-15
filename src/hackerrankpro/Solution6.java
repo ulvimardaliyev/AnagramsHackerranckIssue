@@ -37,6 +37,12 @@ public class Solution6 {
 
         }
         System.out.println(stringKeeper);
-
+        String arr[] = new String[stringKeeper.size()];
+        int ko = 0;
+        for (String string : stringKeeper) {
+            arr[ko] = string;
+            ko++;
+        }
+        
     }
 }
