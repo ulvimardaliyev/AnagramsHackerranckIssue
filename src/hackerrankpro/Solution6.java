@@ -35,7 +35,7 @@ public class Solution6 {
             kKeeper = count + iKeeper;
 
         }
-        System.out.println(stringKeeper);
+        //System.out.println(stringKeeper);
         String arr[] = new String[stringKeeper.size()];
         for (int i = 0; i < stringKeeper.size(); i++) {
             arr[i] = stringKeeper.get(i);
@@ -50,9 +50,10 @@ public class Solution6 {
                 }
             }
         }
-        for (String kl : arr) {
-            System.out.println(kl);
-        }
-
+//        for (String kl : arr) {
+//            System.out.print(kl + " ");
+//        }
+        //System.out.println(arr.length);
+        System.out.println(arr[0] + "\n" + arr[arr.length - 1]);
     }
 }
