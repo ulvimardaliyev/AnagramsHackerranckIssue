@@ -41,6 +41,8 @@ public class Solution6 {
         for (int i = 0; i < stringKeeper.size(); i++) {
             arr[i] = stringKeeper.get(i);
         }
+        
+        //asagidakini bubble sortingle etmek olar
         int keepPrevious = 0, keepNext = 1;
         for (int counter = 0; counter < arr.length; counter++) {
             for (int i = keepPrevious, y = keepNext; i < arr.length; y++, i++) {
