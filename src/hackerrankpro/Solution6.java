@@ -41,13 +41,14 @@ public class Solution6 {
         for (int i = 0; i < stringKeeper.size(); i++) {
             arr[i] = stringKeeper.get(i);
         }
-
-        for (int i = 1, y = 0, keepZero = 0; i < arr.length; y++, i++) {
-
-            if (list.indexOf(arr[i].charAt(keepZero)) > list.indexOf(arr[y].charAt(keepZero))) {
-                System.out.println("Yes");
-            } else {
-                System.out.println("NO");
+        int keepPrevious = 0, keepNext = 1;
+        for (int counter = 0; counter < arr.length; counter++) {
+            for (int i = keepPrevious, y = keepNext; i < arr.length; y++, i++) {
+                if (list.indexOf(arr[i].charAt(0)) > list.indexOf(arr[y].charAt(0))) {
+                    System.out.println("Yes");
+                } else {
+                    System.out.println("NO");
+                }
             }
 
         }
