@@ -9,9 +9,9 @@ public class Solution6 {
         Scanner scanner = new Scanner(System.in);
         ArrayList<Character> list = new ArrayList<>();
         ArrayList<String> stringKeeper = new ArrayList<>();
-        String input = scanner.next();
+        String input = scanner.next().toLowerCase();
         int count = scanner.nextInt();
-        for (char ch = 'a'; ch < 'z'; ch++) {
+        for (char ch = 'a'; ch <= 'z'; ch++) {
             list.add(ch);
         }
         int iKeeper = 0, lKeeper = 0, kKeeper = count;
@@ -42,5 +42,17 @@ public class Solution6 {
             arr[i] = stringKeeper.get(i);
         }
 
+        for (int i = 1, y = 0, keepZero = 0; i < arr.length; y++, i++) {
+
+            if (list.indexOf(arr[i].charAt(keepZero)) > list.indexOf(arr[y].charAt(keepZero))) {
+                System.out.println("Yes");
+            } else {
+                System.out.println("NO");
+            }
+
+        }
     }
 }
+//            System.out.println(i + " " + y);
+//            System.out.println("i " + i + " " + list.indexOf(arr[i].charAt(keepZero)) + " " + arr[i].charAt(0));
+//            System.out.println("y " + y + " " + list.indexOf(arr[y].charAt(keepZero)) + " " + arr[y].charAt(0));
