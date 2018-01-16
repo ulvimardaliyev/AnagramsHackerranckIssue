@@ -16,7 +16,6 @@ public class Solution6 {
         }
         int iKeeper = 0, lKeeper = 0, kKeeper = count;
         for (int j = 0; j < input.length(); j++) {
-
             for (int l = lKeeper, i = iKeeper, k = kKeeper; l < input.length(); l++, i += count, k += count) {
                 if (i > input.length() || k > input.length()) {
                     break;
@@ -27,7 +26,7 @@ public class Solution6 {
                 }
             }
             //l count-a beraber olanda break, break olmasa, o eyni substringleri
-            // add edecek
+            // add edecek, yeni count bitenden sonra tekrarlanma olacaq
             if (lKeeper == count) {
                 break;
             }
@@ -42,17 +41,6 @@ public class Solution6 {
             arr[i] = stringKeeper.get(i);
         }
 
-        //asagidakini bubble sortingle etmek olar
-//        int keepPrevious = 0, keepNext = 1;
-//        for (int counter = 0; counter < arr.length; counter++) {
-//            for (int i = keepPrevious, y = keepNext; i < arr.length; y++, i++) {
-//                if (list.indexOf(arr[i].charAt(0)) > list.indexOf(arr[y].charAt(0))) {
-//                    System.out.println("Yes");
-//                } else {
-//                    System.out.println("NO");
-//                }
-//            }
-//        }
         for (int i = 0; i < arr.length; i++) {
             for (int j = 1, k = 0; j < arr.length; k++, j++) {
                 if (list.indexOf(arr[k].charAt(0)) > list.indexOf(arr[j].charAt(0))) {
@@ -62,12 +50,9 @@ public class Solution6 {
                 }
             }
         }
-        for(String kl : arr){
+        for (String kl : arr) {
             System.out.println(kl);
         }
-        
+
     }
 }
-//            System.out.println(i + " " + y);
-//            System.out.println("i " + i + " " + list.indexOf(arr[i].charAt(keepZero)) + " " + arr[i].charAt(0));
-//            System.out.println("y " + y + " " + list.indexOf(arr[y].charAt(keepZero)) + " " + arr[y].charAt(0));
