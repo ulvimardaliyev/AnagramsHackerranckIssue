@@ -53,8 +53,19 @@ public class Solution6 {
 //                }
 //            }
 //        }
-
-
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 1, k = 0; j < arr.length; k++, j++) {
+                if (list.indexOf(arr[k].charAt(0)) > list.indexOf(arr[j].charAt(0))) {
+                    String temp = arr[j];
+                    arr[j] = arr[k];
+                    arr[k] = temp;
+                }
+            }
+        }
+        for(String kl : arr){
+            System.out.println(kl);
+        }
+        
     }
 }
 //            System.out.println(i + " " + y);
