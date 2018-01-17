@@ -9,7 +9,7 @@ public class Solution6 {
         Scanner scanner = new Scanner(System.in);
         ArrayList<Character> list = new ArrayList<>();
         ArrayList<String> stringKeeper = new ArrayList<>();
-        String input = scanner.next().toLowerCase();
+        String input = scanner.next();
         int count = scanner.nextInt();
         for (char ch = 'a'; ch <= 'z'; ch++) {
             list.add(ch);
@@ -40,19 +40,37 @@ public class Solution6 {
         for (int i = 0; i < stringKeeper.size(); i++) {
             arr[i] = stringKeeper.get(i);
         }
-
+        int counter = 0;
+//        for (String klo : arr) {
+//            System.out.println(klo);
+//        }
+        //System.out.println("");
         for (int i = 0; i < arr.length; i++) {
             for (int j = 1, k = 0; j < arr.length; k++, j++) {
-                if (list.indexOf(arr[k].charAt(0)) > list.indexOf(arr[j].charAt(0))) {
+//                System.out.println(arr[k].charAt(counter) + " " + arr[j].charAt(counter));
+//                System.out.print(list.indexOf(arr[k].charAt(counter)) + " " + list.indexOf(arr[j].charAt(counter)));
+//                System.out.println("");
+                if (list.indexOf(arr[k].charAt(counter)) > list.indexOf(arr[j].charAt(counter))) {
                     String temp = arr[j];
                     arr[j] = arr[k];
                     arr[k] = temp;
+                    counter = 0;
+                } else if ((list.indexOf(arr[k].charAt(counter)) == list.indexOf(arr[j].charAt(counter)))) {
+                    k--;
+                    j--;
+                    counter++;
+
+                } else if (list.indexOf(arr[k].charAt(counter)) < list.indexOf(arr[j].charAt(counter))) {
+                    counter = 0;
+                    continue;
                 }
             }
+            //System.out.println("");
         }
 //        for (String kl : arr) {
 //            System.out.print(kl + " ");
 //        }
+        //System.out.println("");
         //System.out.println(arr.length);
         System.out.println(arr[0] + "\n" + arr[arr.length - 1]);
     }
