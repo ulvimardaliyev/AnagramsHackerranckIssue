@@ -11,6 +11,9 @@ public class Solution6 {
         ArrayList<String> stringKeeper = new ArrayList<>();
         String input = scanner.next();
         int count = scanner.nextInt();
+        for (char ch = 'A'; ch <= 'Z'; ch++) {
+            list.add(ch);
+        }
         for (char ch = 'a'; ch <= 'z'; ch++) {
             list.add(ch);
         }
